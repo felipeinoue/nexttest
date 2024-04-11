@@ -4,8 +4,6 @@ module.exports = {
   // output: "node .next/standalone/server.js",
 }
 
-
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     serverActions: {
