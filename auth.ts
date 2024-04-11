@@ -1,6 +1,6 @@
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
-import GitHub from "next-auth/providers/github"
+// import GitHub from "next-auth/providers/github"
 
 import type { NextAuthConfig } from "next-auth"
 
@@ -65,7 +65,7 @@ export const config = {
     }),
 
 
-    GitHub,
+    // GitHub,
   ],
   basePath: "/auth",
   callbacks: {
