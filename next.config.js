@@ -1,12 +1,6 @@
 /** @type {import("next").NextConfig} */
 module.exports = {
   output: "standalone",
-  // output: "node .next/standalone/server.js",
-}
-
-
-/** @type {import("next").NextConfig} */
-module.exports = {
   experimental: {
       serverActions: {
           allowedOrigins: [
