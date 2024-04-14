@@ -30,6 +30,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "lib/context.js", "lib/apicalls.js"  ],
+, "lib/global-context.js", "lib/apicalls.js"  ],
   "exclude": ["node_modules"]
 }

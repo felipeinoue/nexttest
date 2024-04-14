@@ -1,7 +1,7 @@
 "use client"
 
 import { get_user } from "@/lib/apicalls";
-import { GlobalContext } from "@/lib/context";
+import { GlobalContext } from "@/lib/global-context";
 import { useSession } from "next-auth/react"
 import { useContext } from "react";
 
