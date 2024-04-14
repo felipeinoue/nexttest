@@ -1,16 +1,27 @@
 import Link from "next/link"
-import { MainNav } from "./main-nav"
-import UserButton from "./user-button"
+import { SignIn, SignOut } from "./auth-components"
+import { auth } from "@/auth"
 
-export default function Header() {
+export default async function Header() {
+  const session = await auth()
+
   return (
-    <header className="sticky flex justify-center border-b">
-      <div className="flex items-center justify-between w-full h-16 max-w-3xl px-4 mx-auto sm:px-6">
-        <MainNav />
-        <UserButton />
+    <header>
+      <div>
+        {
+          !session?.user ?
+          (
+            <SignIn />
+          )
+          :
+          (
+            <SignOut />
+          )
+        }
+        <Link href="/">home</Link>
         <Link href="/page1">page1</Link>
-        <Link href="/page2">page2</Link>
       </div>
+      <hr></hr>
     </header>
   )
 }

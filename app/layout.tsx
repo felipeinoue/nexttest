@@ -22,14 +22,10 @@ export default async function RootLayout({ children }: React.PropsWithChildren) 
     <html lang="en">
       <GlobalProvider>
         <SessionProvider basePath={"/auth"} session={session}>
-            <body className={inter.className}>
-              <div className="flex flex-col justify-between w-full h-full min-h-screen">
-                <Header />
-                <main className="flex-auto w-full max-w-3xl px-4 py-4 mx-auto sm:px-6 md:py-6">
-                  {children}
-                </main>
-                <Footer />
-              </div>
+            <body>
+              <Header />
+              <main>{children}</main>
+              <Footer />
             </body>
         </SessionProvider>
       </GlobalProvider>

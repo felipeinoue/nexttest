@@ -63,8 +63,6 @@ export const config = {
         return null
       }
     }),
-
-
     // GitHub,
   ],
   basePath: "/auth",
@@ -76,9 +74,14 @@ export const config = {
 
     authorized({ request, auth }) {
       const { pathname } = request.nextUrl
-      if (pathname === "/middleware-example") return !!auth
-      return true
-      // return !!auth //todas as páginas precisam estar logadas para serem acessadas /FDI
+      // if (pathname === "/middleware-example")
+      //   return !!auth
+      // else
+      //   return true
+      if (pathname === "/auth/callback/credentials") //proteger todas as rotas exceto essa para fazer login /FDI
+        return true
+      else
+        return !!auth
     },
 
     jwt({ token, trigger, session, user }) {
