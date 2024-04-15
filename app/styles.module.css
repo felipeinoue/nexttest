@@ -1,3 +1,9 @@
+
+.hero {
+  background-color: red;
+}
+
+
 /* Set min-height to avoid page reflow while session loading */
 .signedInStatus {
   display: block;

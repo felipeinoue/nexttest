@@ -1,0 +1,16 @@
+:root {
+  --color-blue-primary: #024089;
+  --color-blue-two: #0063D7;
+  --color-white-primary: #FFFFFF;
+  --color-white-tertiary: #D4D4D8;
+  --color-white-quartiary: #D1D1D1;
+  --color-gray-primary: #F4F4F5;
+  --color-grey-alternative: #71717A;
+
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

@@ -1,5 +1,6 @@
 "use client"
 
+import styles from './styles.module.css'
 import { get_user } from "@/lib/apicalls";
 import { GlobalContext } from "@/lib/global-context";
 import { useSession } from "next-auth/react"
@@ -35,6 +36,11 @@ export default function Index() {
       <div>
         <div>calling api</div>
         <button onClick={()=>{test()}}>BTN Test</button>
+      </div>
+      <br></br>
+      <br></br>
+      <div className={styles.hero}>
+        <div>Using next module.CSS</div>
       </div>
     </>
   )

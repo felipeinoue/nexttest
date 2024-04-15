@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { SignIn, SignOut } from "./auth-components"
+import { SignIn, SignOut } from "../auth-components/auth-components"
 import { auth } from "@/auth"
 
 export default async function Header() {
