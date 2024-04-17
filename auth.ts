@@ -17,10 +17,10 @@ export const config = {
       // You can specify whatever fields you are expecting to be submitted.
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
-      credentials: {
-        email: { label: "email", type: "email", placeholder: "jsmith@example.com" },
-        password: { label: "Password", type: "password" },
-      },
+      // credentials: {
+      //   email: { label: "email", type: "email", placeholder: "jsmith@example.com" },
+      //   password: { label: "Password", type: "password" },
+      // },
       async authorize(credentials, req) {
         // You need to provide your own logic here that takes the credentials
         // submitted and returns either a object representing a user or value
@@ -88,6 +88,10 @@ export const config = {
       if (trigger === "update") token.name = session.user.name
       return {...token, ...user}
     },
+
+  },
+  pages: {
+    signIn: '/auth/login',
   },
 } satisfies NextAuthConfig
 

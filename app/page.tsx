@@ -16,7 +16,7 @@ export default function Index() {
   }
 
   return (
-    <>
+    <div className={styles.main}>
       HOME PAGE
       <br></br>
       <br></br>
@@ -42,6 +42,13 @@ export default function Index() {
       <div className={styles.hero}>
         <div>Using next module.CSS</div>
       </div>
-    </>
+      <br></br>
+      <br></br>
+      <div>image source example</div>
+      <img src='/instagram.svg'></img>
+      <br></br>
+      <br></br>
+      <div className={styles.facebook}>class background image example</div>
+    </div>
   )
 }

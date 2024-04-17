@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { SignIn, SignOut } from "../auth-components/auth-components"
+import { SignOut } from "../auth-components/auth-components"
 import { auth } from "@/auth"
 
 export default async function Header() {
@@ -7,21 +7,21 @@ export default async function Header() {
 
   return (
     <header>
-      <div>
-        {
-          !session?.user ?
-          (
-            <SignIn />
-          )
-          :
-          (
+      {
+        !session?.user ?
+        (
+          <></>
+        )
+        :
+        (
+          <>
             <SignOut />
-          )
-        }
-        <Link href="/">home</Link>
-        <Link href="/page1">page1</Link>
-      </div>
-      <hr></hr>
+            <Link href="/">home</Link>
+            <Link href="/page1">page1</Link>
+            <hr></hr>
+          </>
+        )
+      }
     </header>
   )
 }
