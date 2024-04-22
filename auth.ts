@@ -17,10 +17,10 @@ export const config = {
       // You can specify whatever fields you are expecting to be submitted.
       // e.g. domain, username, password, 2FA token, etc.
       // You can pass any HTML attribute to the <input> tag through the object.
-      // credentials: {
-      //   email: { label: "email", type: "email", placeholder: "jsmith@example.com" },
-      //   password: { label: "Password", type: "password" },
-      // },
+      credentials: {
+        email: { label: "email", type: "email", placeholder: "jsmith@example.com" },
+        password: { label: "Password", type: "password" },
+      },
       async authorize(credentials, req) {
         // You need to provide your own logic here that takes the credentials
         // submitted and returns either a object representing a user or value
@@ -89,7 +89,28 @@ export const config = {
       return {...token, ...user}
     },
 
+
+    // adicionei a função redirect para resolver problema de não directionar para
+    // a página que estava quando está utilizando um "custom login page"
+    // se um dia descobrir pq não funcionava, pode tirar a função toda / Felipe
+    async redirect({ url, baseUrl }) {
+      const search = new URL(url).search
+      const urlParams = new URLSearchParams(search)
+      const callbackPage = urlParams.get("callbackUrl")
+
+      // Allows relative callback URLs
+      if (url.startsWith("/"))
+        return `${baseUrl}${url}`
+      // Allows callback URLs on the same origin
+      else if (new URL(url).origin === baseUrl)
+        if (callbackPage) {
+          return callbackPage
+        } else
+          return url
+      return baseUrl
+    },
   },
+
   pages: {
     signIn: '/auth/login',
   },
